@@ -1,0 +1,817 @@
+ /* RESET BÁSICO */
+ html {
+    scroll-behavior: smooth;
+  }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #f5f5f5;
+        color: #333;
+      }
+      
+      /* CONTENEDOR GLOBAL */
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: auto;
+      }
+      
+      /* HEADER Y MENÚ DE NAVEGACIÓN */
+      .header {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        padding: 1rem 0;
+      }
+      .nav-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #fff;
+      }
+      .nav-menu ul {
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+      }
+      .nav-menu ul li a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: 400;
+        transition: color 0.3s;
+      }
+      .nav-menu ul li a:hover {
+        color: #00c4cc;
+      }
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+      }
+      .hamburger span {
+        height: 3px;
+        width: 25px;
+        background: #fff;
+        margin-bottom: 5px;
+        border-radius: 5px;
+      }
+      .close-btn {
+        display: none;
+        font-size: 2rem;
+        color: #fff;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+      }
+      
+      /* HERO CON CARRUSEL */
+      .hero {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+      }
+      .carousel {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+      .carousel-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        transition: opacity 1s ease;
+      }
+      .carousel-image.active {
+        opacity: 1;
+      }
+      .slider-control {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 2rem;
+        color: #fff;
+        background: rgba(0,0,0,0.3);
+        padding: 10px;
+        cursor: pointer;
+        z-index: 3;
+        border-radius: 50%;
+      }
+      .slider-control.left {
+        left: 20px;
+      }
+      .slider-control.right {
+        right: 20px;
+      }
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+      }
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        color: #fff;
+        padding: 0 1rem;
+        margin-top: 26vh;
+      }
+      .hero-content h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        font-weight: 300;
+        text-shadow: 2px 2px 2px #ffffffa9;
+      }
+  
+      .hero-content p {
+        font-size: 1.5rem;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+        text-shadow: 1px 1px 3px #ffffffa9;
+      }
+      /* Botones del Hero */
+      .hero-btns .btn {
+        display: inline-block;
+        padding: 0.8rem 1.5rem;
+        margin: 0 0.5rem;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 400;
+        transition: background 0.3s, color 0.3s;
+        cursor: pointer;
+        background: #00000018;
+        color: #00f7ff;
+        border: 1px solid #00f7ff;
+      }
+      .hero-btns .btn:hover {
+        background: #00f7ff59;
+      }
+      .btn-outline {
+        background: transparent;
+        color: #fff;
+        border: 1px solid #fff;
+      }
+      .btn-outline:hover {
+        background: #fff;
+      }
+      
+      /* Secciones adicionales */
+      .catalogo,
+      .catalogo1,
+      .tarjetas,
+      .recargas {
+        padding: 4rem 0;
+        text-align: center;
+        font-size: 1.5rem;
+      }
+      .catalogo h2,
+      .tarjetas h2,
+      .recargas h2 {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+      }
+      .catalogo1 {
+        background-color: #333;
+        color: #fff;
+        font-size: 1.4rem;
+      }
+  
+      /* MENÚ RESPONSIVE (OFF-CANVAS) */
+      @media (max-width: 768px) {
+        .hamburger {
+          display: flex;
+        }
+        .nav-menu {
+          position: fixed;
+          top: 0;
+          right: -100%;
+          height: 100vh;
+          width: 250px;
+          background: rgba(0, 0, 0, 0.9);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: right 0.3s ease;
+          z-index: 999;
+        }
+        .nav-menu.open {
+          right: 0;
+        }
+        .nav-menu ul {
+          flex-direction: column;
+          gap: 20px;
+        }
+        .close-btn {
+          display: block;
+        }
+      }
+      
+      /* ==========================
+         Estilos para Tarjetas de Videojuegos
+         ========================== */
+      :root {
+        --color-bg: #f9f9f9;
+        --color-card: #fff;
+        --color-text: #333;
+        --color-primary: #ffffff;
+        --color-accent: #00eeff;
+        --color-discount: #c0392b;
+        --radius: 10px;
+        --transition: 0.3s ease;
+        --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+      .unique-product-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+        width: 100%;
+        max-width: 1250px;
+        margin: 0 auto;
+        padding: 20px 0;
+        font-family: 'Roboto', sans-serif;
+      }
+      .product-card {
+    background: linear-gradient(to bottom, #2b2b2b 0%, #1a1a1a 100%);
+    border: 1px solid #ffffff;
+    border-radius: var(--radius);
+    box-shadow: 0 4px 10px #00c4cc;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transition: transform var(--transition), box-shadow var(--transition);
+  }
+  
+  .product-card:hover {
+    transform: translateY(-3px);
+    /* Aumenta un poco la sombra al hacer hover */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+  }
+      .product-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+      }
+      .platform-badge {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background-color: #333;
+        color: #fff;
+        padding: 5px 8px;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        font-weight: 500;
+        z-index: 2;
+      }
+      .discount-badge {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: var(--color-discount);
+        color: #fff;
+        padding: 5px 8px;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        z-index: 2;
+      }
+      .image-container {
+        width: 100%;
+        height: 270px;
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+      .image-container img {
+        width: 100%;
+        height: 100%;
+        transition: transform var(--transition);
+        display: block;
+      }
+      .product-card:hover .image-container img {
+        transform: scale(1.05);
+      }
+      .card-content {
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+      }
+      .product-title {
+        font-size: 1rem;
+        font-weight: 500;
+        margin: 0 0 5px;
+        color: var(--color-primary);
+      }
+      .price-section {
+        margin-bottom: 10px;
+      }
+      .old-price {
+        font-size: 0.9rem;
+        color: #999;
+        text-decoration: line-through;
+        margin-right: 8px;
+      }
+      .new-price {
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--color-accent);
+      }
+      .btn-wrapper {
+        width: 100%;
+        height: 35px;
+        position: relative;
+        z-index: 1;
+        margin-bottom: 10px;
+        border-radius: var(--radius);
+        background: linear-gradient(270deg, #96f061, #a259d3, #1d9de0, #e790b0);
+        background-size: 800% 800%;
+        animation: animateBorder 9s ease infinite;
+        box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.363);
+      }
+      /* Se ha renombrado la clase del botón de las tarjetas para evitar conflicto con el .btn del hero */
+      .btn-card {
+        width: 98%;
+        height: 90%;
+        position: absolute;
+        padding: 5px;
+        border: none;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #212121;
+        color: white;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 4.5px;
+        cursor: pointer;
+        border-radius: var(--radius);
+        font-size: 0.9rem;
+        transition: background var(--transition);
+      }
+      .btn-card:hover {
+        background: #00000079;
+      }
+      @keyframes animateBorder {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+      .secondary-buttons {
+        display: flex;
+        gap: 6px;
+      }
+      .secondary-btn {
+        flex: 1;
+        background: #bdc3c723;
+        color: #fff;
+        padding: 8px;
+        border-radius: var(--radius);
+        text-align: center;
+        font-size: 0.85rem;
+        transition: background var(--transition);
+        font-weight: 500;
+        border: none;
+        cursor: pointer;
+        border: 1px solid #00eeff;
+      }
+      .secondary-btn:hover {
+        background: #ffffff49;
+      }
+      /* Sección Tarjetas */
+  /* Sección Tarjetas */
+  /* Sección Tarjetas */
+  .tarjetas {
+    background-color: #f9f9f9;
+    padding: 2rem 0;
+    border-top: 1px solid #ccc;
+  }
+  
+  .tarjetas .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  .tarjetas h1 {
+    font-size: 2rem;
+    color: #000000;
+    margin-bottom: 1rem;
+  }
+  
+  /* ----- Carrusel ----- */
+  .tarjetas-carousel {
+    position: relative;
+    max-width: 1300px; /* Aumentamos el ancho máximo para más espacio */
+    margin: 0 auto;
+    overflow: hidden; /* Oculta la barra de scroll */
+  }
+  
+  /* "Track" que contiene todas las tarjetas */
+  .tarjetas-track {
+    display: flex;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Ocultar scrollbar en WebKit */
+  .tarjetas-track::-webkit-scrollbar {
+    display: none;
+  }
+  /* Firefox e IE */
+  .tarjetas-track {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  /* Cada tarjeta */
+  .tarjeta-item {
+    flex: 0 0 auto; 
+    width: 160px;
+    margin-right: 1rem;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s;
+  }
+  
+  .tarjeta-item:hover {
+    transform: translateY(-3px);
+  }
+  
+  .tarjeta-item img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* Flechas de navegación */
+  .arrow {
+    cursor: pointer;
+    background: #fff;
+    color: #333;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    user-select: none;
+  }
+  
+  .arrow.left {
+    left: 0;
+  }
+  
+  .arrow.right {
+    right: 0;
+  }
+  
+  /* Botón "VER TODO" */
+  
+  
+  
+  .recargas {
+    background-color: #222; /* Color un poco más claro que negro */
+    padding: 2rem 0;
+  }
+  
+  .recargas .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  .recargas h1 {
+    color: #fff;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Carrusel */
+  .recargas-carousel {
+    position: relative;
+    max-width: 1300px; /* Aumentado para mayor espacio */
+    margin: 0 auto;
+    overflow: hidden; /* Oculta la barra de scroll */
+  }
+  
+  .recargas-track {
+    display: flex;
+    transition: transform 0.3s ease;
+  }
+  
+  .recarga-item {
+    flex: 0 0 auto;
+    width: 160px;
+    margin-right: 1rem;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s;
+  }
+  
+  .recarga-item img {
+    max-width: 100%;
+    display: block;
+    background-color: #2b2b2b;
+  }
+  
+  .recarga-item:hover {
+    transform: translateY(-3px);
+  }
+  
+  /* Flechas de navegación */
+  .recargas-carousel .arrow {
+    cursor: pointer;
+    background: #fff;
+    color: #222;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    user-select: none;
+  }
+  
+  .recargas-carousel .arrow.left {
+    left: 0;
+  }
+  
+  .recargas-carousel .arrow.right {
+    right: 0;
+  }
+  
+  
+      .footer {
+      background: #000;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+      font-weight: 100;
+  }
+  
+  .footer-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: auto;
+  }
+  
+  .footer-logo h2 {
+      color: #00eeff;
+      font-size: 24px;
+  }
+  
+  .footer-logo .highlight {
+      color: #00eeff;
+  }
+  
+  .footer-info h3,
+  .footer-links h3 {
+      color: #00eeff;
+      margin-bottom: 10px;
+  }
+  
+  .footer-links a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      margin: 5px 0;
+      font-weight: 100;
+  }
+  
+  .footer-links .libro-reclamaciones {
+      font-weight: bold;
+      color: #00eeff;
+  }
+  
+  .social-icons a {
+      color: #fff;
+      font-size: 20px;
+      margin: 5px;
+  }
+  
+  .footer-bottom {
+      border-top: 1px solid #00eeff;
+      box-shadow: #1d9de0;
+      margin-top: 10px;
+      padding-top: 10px;
+      font-size: 14px;
+  }
+  
+  /* BOTÓN FLOTANTE */
+  .chat-toggle {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, #f39c12, #e74c3c);
+        border-radius: 50%;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 26px;
+        color: #fff;
+        z-index: 9999;
+        transition: transform 0.3s ease;
+      }
+      .chat-toggle:hover {
+        transform: scale(1.1);
+      }
+      
+      /* CONTENEDOR DEL CHAT */
+      .chatbot-container {
+        position: fixed;
+        bottom: 100px;
+        right: 20px;
+        width: 350px;
+        max-width: 90%;
+        background-color: #1c1c1c;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        overflow: hidden;
+        display: none;
+        flex-direction: column;
+        z-index: 10000;
+        animation: slideUp 0.4s forwards;
+      }
+      @keyframes slideUp {
+        from {
+          transform: translateY(50px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+      
+      /* HEADER DEL CHAT */
+      .chat-header {
+        background: linear-gradient(135deg, #f39c12, #e74c3c);
+        color: #fff;
+        padding: 15px;
+        text-align: center;
+        font-weight: bold;
+        position: relative;
+      }
+      .chat-close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        cursor: pointer;
+        font-size: 18px;
+        color: #fff;
+        transition: transform 0.2s;
+      }
+      .chat-close:hover {
+        transform: scale(1.2);
+      }
+      
+      /* CUERPO DEL CHAT */
+      .chat-body {
+        padding: 10px;
+        height: 300px;
+        overflow-y: auto;
+        background-color: #2c2c2c;
+        display: flex;
+        flex-direction: column;
+      }
+      .chat-body::-webkit-scrollbar {
+        width: 6px;
+      }
+      .chat-body::-webkit-scrollbar-thumb {
+        background-color: #444;
+        border-radius: 3px;
+      }
+      
+      /* MENSAJES Y ANIMACIÓN */
+      .message {
+        margin-bottom: 10px;
+        display: flex;
+        align-items: flex-start;
+        animation: fadeIn 0.3s ease-in-out;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      /* Bot: alineado a la izquierda */
+      .message.bot {
+        justify-content: flex-start;
+      }
+      /* Usuario: alineado a la derecha */
+      .message.user {
+        justify-content: flex-end;
+      }
+      
+      /* AVATARES */
+      .avatar {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        background: #f39c12;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-weight: bold;
+        margin: 0 8px;
+        flex-shrink: 0;
+      }
+      .message.bot .avatar { background: #e74c3c; }
+      .message.user .avatar { background: #0084ff; }
+      
+      /* BURBUJAS DE MENSAJE */
+      .message-text {
+        background-color: #3a3a3a;
+        padding: 10px 15px;
+        border-radius: 10px;
+        color: #fff;
+        max-width: 70%;
+        line-height: 1.3;
+        white-space: pre-line;
+        font-size: 15px;
+      }
+      .message.user .message-text {
+        background-color: #0084ff;
+        text-align: right;
+        font-size: 15px;
+      }
+      
+      /* OPCIONES COMO BOTONES */
+      .options {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 5px;
+      }
+      .option-btn {
+        background-color: #444;
+        color: #fff;
+        border: none;
+        padding: 6px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: background 0.3s;
+      }
+      .option-btn:hover {
+        background-color: #f39c12;
+      }
+      
+      /* RESPONSIVIDAD */
+      @media screen and (max-width: 400px) {
+        .chatbot-container { width: 90%; }
+        .chat-header { font-size: 16px; }
+        .chat-toggle { width: 50px; height: 50px; font-size: 20px; }
+      }
+  

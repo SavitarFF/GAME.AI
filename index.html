@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game.AI</title>
+  <!-- Fuentes: Poppins para la interfaz general y Roboto para las tarjetas -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="game.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <script defer src="main.js"></script>
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <!-- Encabezado con menú de navegación -->
+  <header class="header">
+    <div class="container nav-container">
+      <div class="logo">Game.AI</div>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav class="nav-menu" id="nav-menu">
+        <div class="close-btn" id="close-btn">&times;</div>
+        <ul>
+          <li><a href="#home">INICIO</a></li>
+          <li><a href="#catalogo">CATÁLOGO</a></li>
+          <li><a href="#tarjetas">TARJETAS</a></li>
+          <li><a href="#recargas">RECARGAS</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Sección Hero con carrusel -->
+  <section class="hero" id="home">
+    <div class="carousel">
+      <img src="https://4kwallpapers.com/images/wallpapers/black-myth-wukong-3840x2160-17948.jpeg"
+        class="carousel-image active" alt="Videojuego 1">
+      <img src="https://wallpapersmug.com/download/2560x1080/7308b7/god-of-war-ps4-2018.jpg" class="carousel-image"
+        alt="Videojuego 2">
+      <img src="https://images3.alphacoders.com/593/593826.jpg" class="carousel-image" alt="Videojuego 3">
+      <img src="https://wallpapers.com/images/hd/mobile-gaming-1330-x-730-wallpaper-0kx7azufz50nkdp2.jpg"
+        class="carousel-image" alt="Videojuego 4">
+      <img
+        src="https://img3.wallspic.com/crops/9/8/7/3/6/163789/163789-paquete_de_invierno_ghostrunner-ghostrunner-juego_de_accion-reinos_3d-todo_en_juegos_sa-1920x1080.jpg"
+        class="carousel-image" alt="Videojuego 5">
+      <div class="slider-control left" id="prev">&#10094;</div>
+      <div class="slider-control right" id="next">&#10095;</div>
+    </div>
+    <div class="overlay"></div>
+    <div class="hero-content container">
+      <h1>Descubre los Mejores Videojuegos</h1>
+      <p>
+        Explora nuestro catálogo con los últimos lanzamientos y ofertas exclusivas.<br>
+        ¡Vive la mejor experiencia gamer en un solo lugar!
+      </p>
+      <div class="hero-btns">
+        <a href="#catalogo" class="btn">VER CATÁLOGO</a>
+        <a href="#ofertas" class="btn btn-outline">OFERTAS</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de Catálogo con Tarjetas de Videojuegos -->
+  <section class="catalogo" id="catalogo">
+    <div class="container">
+      <h1>PlayStation 5</h1>
+      <div class="unique-product-container">
+        <!-- Tarjeta 1 -->
+        <div class="product-card">
+          <span class="platform-badge">PS4</span>
+          <span class="discount-badge">-30%</span>
+          <div class="image-container">
+            <img src="https://gamescenter.pe/wp-content/uploads/2024/08/Black-Myth-Wukong-PS5.webp" alt="FIFA 22 PS4">
+          </div>
+          <div class="card-content">
+            <h2 class="product-title">black myth wukong</h2>
+            <div class="price-section">
+              <span class="old-price">S/ 60.00</span>
+              <span class="new-price">S/ 42.00</span>
+            </div>
+            <div class="btn-wrapper">
+              <button class="btn-card">Comprar</button>
+            </div>
+            <div class="secondary-buttons">
+              <button class="secondary-btn">Detalles</button>
+              <button class="secondary-btn">Añadir</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjeta 2 -->
+        <div class="product-card">
+          <span class="platform-badge">PS5</span>
+          <span class="discount-badge">-20%</span>
+          <div class="image-container">
+            <img
+              src="https://www.storegamesperu.com/files/images/productos/1709827814-elden-ring-shadow-of-the-erdtree-dlc-ps5-0.png"
+              alt="Elden Ring PS5">
+          </div>
+          <div class="card-content">
+            <h2 class="product-title">Elden Ring</h2>
+            <div class="price-section">
+              <span class="old-price">S/ 200.00</span>
+              <span class="new-price">S/ 160.00</span>
+            </div>
+            <div class="btn-wrapper">
+              <button class="btn-card">Comprar</button>
+            </div>
+            <div class="secondary-buttons">
+              <button class="secondary-btn">Detalles</button>
+              <button class="secondary-btn">Añadir</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjeta 3 -->
+        <div class="product-card">
+          <span class="platform-badge">PS4</span>
+          <span class="discount-badge">-50%</span>
+          <div class="image-container">
+            <img
+              src="https://storegamesperu.com/files/images/thumbs/productos_300x400_1721239187-fc-25-pre-orden-0.webp"
+              alt="Bloodborne PS4">
+          </div>
+          <div class="card-content">
+            <h2 class="product-title">Fifa 2025</h2>
+            <div class="price-section">
+              <span class="old-price">S/ 120.00</span>
+              <span class="new-price">S/ 60.00</span>
+            </div>
+            <div class="btn-wrapper">
+              <button class="btn-card">Comprar</button>
+            </div>
+            <div class="secondary-buttons">
+              <button class="secondary-btn">Detalles</button>
+              <button class="secondary-btn">Añadir</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjeta 4 -->
+        <div class="product-card">
+          <span class="platform-badge">PS5</span>
+          <span class="discount-badge">-25%</span>
+          <div class="image-container">
+            <img src="https://gamescenter.pe/wp-content/uploads/2024/08/RE-4-R-PS5.webp" alt="Jedi Fallen Order PS5">
+          </div>
+          <div class="card-content">
+            <h2 class="product-title">Resident Evil 4 Remake</h2>
+            <div class="price-section">
+              <span class="old-price">S/ 160.00</span>
+              <span class="new-price">S/ 120.00</span>
+            </div>
+            <div class="btn-wrapper">
+              <button class="btn-card">Comprar</button>
+            </div>
+            <div class="secondary-buttons">
+              <button class="secondary-btn">Detalles</button>
+              <button class="secondary-btn">Añadir</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjeta 5 -->
+        <div class="product-card">
+          <span class="platform-badge">PS4</span>
+          <span class="discount-badge">-30%</span>
+          <div class="image-container">
+            <img
+              src="https://storegamesperu.com/files/images/thumbs/productos_300x400_1718034332-dragon-ball-sparking-zero-pre-orden-0.webp"
+              alt="FIFA 22 PS4">
+          </div>
+          <div class="card-content">
+            <h2 class="product-title">Dragon ball sparking </h2>
+            <div class="price-section">
+              <span class="old-price">S/ 60.00</span>
+              <span class="new-price">S/ 42.00</span>
+            </div>
+            <div class="btn-wrapper">
+              <button class="btn-card">Comprar</button>
+            </div>
+            <div class="secondary-buttons">
+              <button class="secondary-btn">Detalles</button>
+              <button class="secondary-btn">Añadir</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="catalogo1" id="catalogo1">
+    <div class="container">
+      <h1>PlayStation 4</h1>
+      <div class="unique-product-container">
+        <!-- Tarjeta 6 -->
+        <div class="product-card">
+          <span class="platform-badge">PS5</span>
+          <span class="discount-badge">-20%</span>
+          <div class="image-container">
+            <img src="https://gamescenter.pe/wp-content/uploads/2024/08/Call-of-Duty-Black-Ops-6-PS4.webp"
+              alt="Elden Ring PS5">
+          </div>
+          <div class="card-content">
+            <h2 class="product-title">Elden Ring</h2>
+            <div class="price-section">
+              <span class="old-price">S/ 200.00</span>
+              <span class="new-price">S/ 160.00</span>
+            </div>
+            <div class="btn-wrapper">
+              <button class="btn-card">Comprar</button>
+            </div>
+            <div class="secondary-buttons">
+              <button class="secondary-btn">Detalles</button>
+              <button class="secondary-btn">Añadir</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjeta 7 -->
+        <div class="product-card">
+          <span class="platform-badge">PS4</span>
+          <span class="discount-badge">-50%</span>
+          <div class="image-container">
+            <img src="https://gamescenter.pe/wp-content/uploads/2024/08/GTA-V.webp" alt="Bloodborne PS4">
+          </div>
+          <div class="card-content">
+            <h2 class="product-title">Bloodborne</h2>
+            <div class="price-section">
+              <span class="old-price">S/ 120.00</span>
+              <span class="new-price">S/ 60.00</span>
+            </div>
+            <div class="btn-wrapper">
+              <button class="btn-card">Comprar</button>
+            </div>
+            <div class="secondary-buttons">
+              <button class="secondary-btn">Detalles</button>
+              <button class="secondary-btn">Añadir</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjeta 8 -->
+        <div class="product-card">
+          <span class="platform-badge">PS5</span>
+          <span class="discount-badge">-25%</span>
+          <div class="image-container">
+            <img src="https://gamescenter.pe/wp-content/uploads/2024/08/Marvels-Spider-Man-Miles-Morales-PS4N.jpg"
+              alt="Jedi Fallen Order PS5">
+          </div>
+          <div class="card-content">
+            <h2 class="product-title">Jedi Fallen Order</h2>
+            <div class="price-section">
+              <span class="old-price">S/ 160.00</span>
+              <span class="new-price">S/ 120.00</span>
+            </div>
+            <div class="btn-wrapper">
+              <button class="btn-card">Comprar</button>
+            </div>
+            <div class="secondary-buttons">
+              <button class="secondary-btn">Detalles</button>
+              <button class="secondary-btn">Añadir</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjeta 9 -->
+        <div class="product-card">
+          <span class="platform-badge">PS4</span>
+          <span class="discount-badge">-50%</span>
+          <div class="image-container">
+            <img src="https://gamescenter.pe/wp-content/uploads/2024/08/God-of-War-PS4N.webp" alt="Bloodborne PS4">
+          </div>
+          <div class="card-content">
+            <h2 class="product-title">Bloodborne</h2>
+            <div class="price-section">
+              <span class="old-price">S/ 120.00</span>
+              <span class="new-price">S/ 60.00</span>
+            </div>
+            <div class="btn-wrapper">
+              <button class="btn-card">Comprar</button>
+            </div>
+            <div class="secondary-buttons">
+              <button class="secondary-btn">Detalles</button>
+              <button class="secondary-btn">Añadir</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjeta 10 -->
+        <div class="product-card">
+          <span class="platform-badge">PS5</span>
+          <span class="discount-badge">-25%</span>
+          <div class="image-container">
+            <img src="https://gamescenter.pe/wp-content/uploads/2024/08/Tekken-7-Definitive-Edition-PS4.jpg"
+              alt="Jedi Fallen Order PS5">
+          </div>
+          <div class="card-content">
+            <h2 class="product-title">Jedi Fallen Order</h2>
+            <div class="price-section">
+              <span class="old-price">S/ 160.00</span>
+              <span class="new-price">S/ 120.00</span>
+            </div>
+            <div class="btn-wrapper">
+              <button class="btn-card">Comprar</button>
+            </div>
+            <div class="secondary-buttons">
+              <button class="secondary-btn">Detalles</button>
+              <button class="secondary-btn">Añadir</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Sección de Ofertas -->
+  <section class="tarjetas" id="tarjetas">
+    <div class="container">
+      <h1>Tarjetas</h1>
+      <div class="tarjetas-carousel">
+        <!-- Flecha Izquierda -->
+        <div class="arrow left" id="tarjetas-prev">&#10094;</div>
+
+        <!-- Contenedor de todas las tarjetas (Track) -->
+        <div class="tarjetas-track" id="tarjetas-track">
+          <!-- Tarjeta 1 -->
+          <div class="tarjeta-item">
+            <img src="https://gamescenter.pe/wp-content/uploads/2024/10/PSN-Plus-N3-247x343-1.jpg"
+              alt="PlayStation Plus">
+          </div>
+          <!-- Tarjeta 2 -->
+          <div class="tarjeta-item">
+            <img src="https://gamescenter.pe/wp-content/uploads/2024/10/PSN-Cards-247x343-1.jpg"
+              alt="PlayStation Store">
+          </div>
+          <!-- Tarjeta 3 -->
+          <div class="tarjeta-item">
+            <img src="https://gamescenter.pe/wp-content/uploads/2024/10/Apple-247x343-1.webp" alt="Apple Gift Card">
+          </div>
+          <!-- Tarjeta 4 -->
+          <div class="tarjeta-item">
+            <img src="https://gamescenter.pe/wp-content/uploads/2024/10/Nintendo-247x343-1.jpg" alt="Nintendo eShop">
+          </div>
+          <!-- Tarjeta 5 -->
+          <div class="tarjeta-item">
+            <img src="https://gamescenter.pe/wp-content/uploads/2024/10/STEAM-LOGO-247x343-1.webp"
+              alt="Steam Gift Card">
+          </div>
+          <!-- Tarjeta 6 -->
+          <div class="tarjeta-item">
+            <img src="https://gamescenter.pe/wp-content/uploads/2024/10/Xbox-GamePass-Ultimate-247x343-1.jpg"
+              alt="Xbox Game Pass">
+          </div>
+
+          <div class="tarjeta-item">
+            <img src="https://gamescenter.pe/wp-content/uploads/2024/10/Valorant-New-247x343-1.webp" alt="Otra Tarjeta">
+          </div>
+
+          <div class="tarjeta-item">
+            <img src="https://gamescenter.pe/wp-content/uploads/2024/11/Minecraft-CN-247x343-1.webp" alt="Otra Tarjeta">
+          </div>
+
+          <div class="tarjeta-item">
+            <img src="https://gamescenter.pe/wp-content/uploads/2024/10/Riot-Acces-Point-247x343-1.webp"
+              alt="Otra Tarjeta">
+          </div>
+
+        </div>
+
+        <!-- Flecha Derecha -->
+        <div class="arrow right" id="tarjetas-next">&#10095;</div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <div class="chat-toggle" id="chatToggle">💬</div>
+
+  <!-- CONTENEDOR DEL CHATBOT -->
+  <div class="chatbot-container" id="chatbot">
+    <div class="chat-header">
+      GAME.AI - Asistente Virtual
+      <div class="chat-close" id="chatClose">✖</div>
+    </div>
+    <div class="chat-body" id="chatBody">
+      <!-- Los mensajes se cargarán aquí -->
+    </div>
+  </div>
+
+  <!-- Sección de Contacto -->
+  <section class="recargas" id="recargas">
+    <div class="container">
+      <h1>recargas</h1>
+      <div class="recargas-carousel">
+        <div class="arrow left" id="recargas-prev">&#10094;</div>
+        <div class="recargas-track" id="recargas-track">
+          <div class="recarga-item">
+            <img src="https://gamescenter.pe/wp-content/uploads/2024/10/Blood-Strike-C-247x343-1.webp" alt="Recarga 1">
+          </div>
+          <div class="recarga-item">
+            <img src="https://gamescenter.pe/wp-content/uploads/2024/10/Brawl-Stars-New-247x343-1.webp" alt="Recarga 2">
+          </div>
+          <div class="recarga-item">
+            <img src="https://gamescenter.pe/wp-content/uploads/2024/11/COD-Mobile-New-247x343-1-216x300-1.webp"
+              alt="Recarga 3">
+          </div>
+          <div class="recarga-item">
+            <img src="https://gamescenter.pe/wp-content/uploads/2024/11/Efootball-24-247x343-1-216x300-1.webp"
+              alt="Recarga 4">
+          </div>
+          <div class="recarga-item">
+            <img src="https://gamescenter.pe/wp-content/uploads/2024/10/FC-Mobile-Portada-247x343-1.webp"
+              alt="Recarga 5">
+          </div>
+          <div class="recarga-item">
+            <img src="https://gamescenter.pe/wp-content/uploads/2024/10/Fortnite-TN-247x343-1.webp" alt="Recarga 6">
+          </div>
+          <div class="recarga-item">
+            <img src="https://gamescenter.pe/wp-content/uploads/2024/10/Free-Fire-Categoria-247x343-1.webp"
+              alt="Recarga 6">
+          </div>
+          <div class="recarga-item">
+            <img src="https://gamescenter.pe/wp-content/uploads/2024/10/Roblox-New-247x343-1.webp" alt="Recarga 6">
+          </div>
+          <div class="recarga-item">
+            <img src="https://gamescenter.pe/wp-content/uploads/2024/11/Mobile-Legends-Categorias-247x343-1.jpg"
+              alt="Recarga 6">
+          </div>
+          <div class="recarga-item">
+            <img src="https://gamescenter.pe/wp-content/uploads/2024/11/Honor-of-Kings-C-247x343-1-216x300-1.webp"
+              alt="Recarga 6">
+          </div>
+        </div>
+        <div class="arrow right" id="recargas-next">&#10095;</div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <h2><span class="logo-icon">🔘</span> GAME.<span class="highlight">AI</span></h2>
+        <p>JUEGA SIN LÍMITES</p>
+        <p>Tienda Especializada en Videojuegos </p>
+      </div>
+      <div class="footer-info">
+        <h3>HORARIOS DE ATENCIÓN:</h3>
+        <p>Lunes a Sábado: 10:00 a 21:00 hrs</p>
+        <p>Domingos y Feriados: 11:00 a 20:00 hrs</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-facebook-messenger"></i></a>
+          <a href="#"><i class="fab fa-tiktok"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h3>ENLACES DE AYUDA</h3>
+        <a href="#">Políticas y Privacidad</a>
+        <a href="#">Términos y Condiciones</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Game.AI . Todos los Derechos Reservados.</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>

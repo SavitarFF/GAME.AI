@@ -506,7 +506,7 @@
   
   
   .recargas {
-    background-color: #222; /* Color un poco más claro que negro */
+    background-color: #222; 
     padding: 2rem 0;
   }
   
@@ -525,9 +525,9 @@
   /* Carrusel */
   .recargas-carousel {
     position: relative;
-    max-width: 1300px; /* Aumentado para mayor espacio */
+    max-width: 1300px; 
     margin: 0 auto;
-    overflow: hidden; /* Oculta la barra de scroll */
+    overflow: hidden; 
   }
   
   .recargas-track {
@@ -814,4 +814,5 @@
         .chat-header { font-size: 16px; }
         .chat-toggle { width: 50px; height: 50px; font-size: 20px; }
       }
+
   
